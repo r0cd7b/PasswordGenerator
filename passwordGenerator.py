@@ -3,15 +3,14 @@ import random
 
 def generate_password():
     try:
-        special = "!$%*?"
-        decimal = "0123456789"
-        upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        lower = "abcdefghijklmnopqrstuvwxyz"
-        characters = special + decimal + upper + lower
+        text = ["!$%*?", "0123456789", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"]
         while input() == "":
-            password = random.choice(special) + random.choice(decimal) + random.choice(upper) + random.choice(lower)
-            for i in range(8):
+            password = ""
+            for characters in text:
                 password += random.choice(characters)
+            for i in range(8):
+                password += random.choice(text)
+            print(password)
             password = list(password)
             random.shuffle(password)
             print(password)
