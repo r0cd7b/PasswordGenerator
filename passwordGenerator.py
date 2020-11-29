@@ -1,16 +1,16 @@
 import random
 
 
-def manufacture_password():
+def generate_password():
     try:
-        while True:
+        while input() == "":
             password = ""
-            for i in range(int(input("Input figures: "))):
-                password += random.choice("!%*0123456789?@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+            for i in range(12):
+                password += random.choice("!$%*0123456789?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
             print(password)
-    except:
-        print("Exit.")
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':
-    manufacture_password()
+    generate_password()
